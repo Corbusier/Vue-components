@@ -32,9 +32,8 @@
       stack
     },
     mounted() {
-      let self = this
       setTimeout( ()=> {
-        self.someList = [
+        this.someList = [
           {
             html: '<img src="https://ws4.sinaimg.cn/large/006tNc79ly1fqq7j73wsvj308w08wglf.jpg" alt="01">'
           },

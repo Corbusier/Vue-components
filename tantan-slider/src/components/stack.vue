@@ -134,7 +134,6 @@ export default {
         this.temporaryData.posWidth = this.basicData.end.x - this.basicData.start.x
         this.temporaryData.posHeight = this.basicData.end.y - this.basicData.start.y
 
-        // 计算偏移角度
         let rotateDirection = this.rotateDirection()
         this.temporaryData.rotate = rotateDirection * this.offsetWidthRatio * 15 * this.angleRatio
       }
@@ -143,7 +142,6 @@ export default {
       this.temporaryData.tracking = false
       this.temporaryData.animation = true
       
-      // 划出面积是否大于0.4
       if (this.offsetRatio >= 0.4) {
 
         // 计算划出后最终位置
@@ -157,7 +155,6 @@ export default {
 
         this.temporaryData.opacity = 0
         this.nextTick()
-      // 不满足条件则滑入
       } else {
         this.temporaryData.posWidth = 0
         this.temporaryData.posHeight = 0
@@ -175,7 +172,6 @@ export default {
       // 循环currentPage
       this.temporaryData.currentPage = this.temporaryData.currentPage === this.pages.length - 1 ? 0 : this.temporaryData.currentPage + 1
       
-      // DOM更新后，新的首页初始化
       this.$nextTick(() => {
         this.temporaryData.posWidth = 0
         this.temporaryData.posHeight = 0
@@ -199,7 +195,6 @@ export default {
       this.temporaryData.tracking = false
       this.temporaryData.animation = true
 
-      // 计算划出后最终位置
       let width = this.$el.offsetWidth
       this.temporaryData.posWidth = width
       this.temporaryData.posHeight = 0
